@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-serif {
+  font-family: "Roboto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  /* font-variation-settings: "wdth" 100, "GRAD" 0; */
+}
+.shadow-all {
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+}
+.Toastify__toast-container {
+  z-index: 9999 !important;
+}
