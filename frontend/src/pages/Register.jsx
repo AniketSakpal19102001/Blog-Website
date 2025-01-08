@@ -23,9 +23,6 @@ function Register() {
     }
   };
 
-  if (isLoading)
-    return <div className="py-6 text-center min-h-screen">Redirecting...</div>;
-
   return (
     <>
       <div className="w-full h-screen flex justify-center items-center">
