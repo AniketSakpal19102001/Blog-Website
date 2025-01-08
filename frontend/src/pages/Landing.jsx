@@ -30,7 +30,7 @@ function Landing() {
           </nav>
         </div>
         <div className="w-full ">
-          <div className="lg:grid xl:grid-cols-3 py-32 min-h-[95vh] mx-6 md:mx-20 ">
+          <div className="lg:grid xl:grid-cols-3 py-32 min-h-[90vh] mx-6 md:mx-20 ">
             <div className="flex flex-col  col-span-2">
               <p id="hero" className="text-6xl md:text-8xl">
                 Human
