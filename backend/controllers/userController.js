@@ -61,7 +61,11 @@ export const handleLogin = catchAsync(async (req, res, next) => {
     config.JWT_SECRET
   );
   user.password = undefined;
-  res.cookie("token", token, { httpOnly: true, secure: true });
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "None",
+  });
 
   return res.status(200).json({
     user: {
