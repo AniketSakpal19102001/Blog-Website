@@ -144,8 +144,8 @@ function ViewBlog() {
 
   if (isLoading || !profile)
     return <div className="min-h-screen text-center py-5">Loading...</div>;
-  if (!blogData) return null;
-  if (!profileData) return null;
+  if (!blogData) return <div className="h-screen"></div>;
+  if (!profileData) return <div className="h-screen"></div>;
 
   return (
     <>
