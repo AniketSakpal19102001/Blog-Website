@@ -4,6 +4,7 @@ import { Pencil } from "lucide-react";
 import { useGetBlogsByOwnerQuery } from "../redux/api/blogSlice";
 import {
   useEditAboutMutation,
+  useGetProfileQuery,
   useGetUserDataByIdQuery,
 } from "../redux/api/userSlice";
 import { toast } from "react-toastify";
@@ -34,14 +35,22 @@ const About = ({ data }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [aboutText, setAboutText] = useState(data.about || "");
   const [editAbout] = useEditAboutMutation();
-
+  const { refetch } = useGetUserDataByIdQuery(data._id, {
+    refetchOnMountOrArgChange: true,
+    staleTime: 0,
+  });
+  const { refetch: profileRefetch } = useGetProfileQuery(undefined, {
+    refetchOnMountOrArgChange: true,
+    staleTime: 0,
+  });
   const handleUpdateAbout = async () => {
     try {
       const response = await editAbout(aboutText).unwrap();
+      refetch();
+      profileRefetch();
       console.log(response);
       toast.success(response.message, { autoClose: 500 });
       setIsEditing(false);
-      navigate("/home");
     } catch (error) {
       toast.error(error.data.message, { autoClose: 500 });
       setIsEditing(false);

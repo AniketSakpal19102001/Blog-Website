@@ -12,8 +12,8 @@ export default Profile;
 
 function Left() {
   const { data, isError, isLoading, refetch } = useGetProfileQuery(undefined, {
-    refetchOnMountOrArgChange: true, // Refetch when the component mounts or arguments change
-    staleTime: 0, // Force data to always be fresh
+    refetchOnMountOrArgChange: true,
+    staleTime: 0,
   });
 
   const [profileData, setProfileData] = useState([]);
@@ -67,7 +67,10 @@ function Left() {
   );
 }
 function Right() {
-  const { data, isError, isLoading, refetch } = useGetProfileQuery();
+  const { data, isError, isLoading, refetch } = useGetProfileQuery(undefined, {
+    refetchOnMountOrArgChange: true,
+    staleTime: 0,
+  });
 
   const [profileData, setProfileData] = useState([]);
   // console.log(profileData);
@@ -97,9 +100,7 @@ function Right() {
               profileData.followed.length + " Followers"}
           </div>
           <div className="text-gray-700 ">
-            I'm not trying to convince you of anything. Just want to bring a
-            small stone to your intellectual building. Maybe to get closer to
-            your ideal.
+            {profileData && profileData.about}
           </div>
           {/* <div className="py-1">
             {profileData &&
