@@ -55,7 +55,8 @@ function Landing() {
             </div>
           </div>
           <div className="w-full bg-orange-50 border-t border-gray-600 py-4">
-            <div className="flex justify-center items-center gap-4 py-5">
+            
+             <div className="hidden md:flex justify-center items-center gap-4 py-5">
               <p className="text-gray-500 text-[0.8rem] cursor-pointer">Help</p>
               <p className="text-gray-500 text-[0.8rem] cursor-pointer">
                 Status
@@ -73,11 +74,18 @@ function Landing() {
               <p className="text-gray-500 text-[0.8rem] cursor-pointer">
                 Privacy
               </p>
-              <p className="text-gray-500 text-[0.8rem] cursor-pointer">Term</p>
+              <p className="text-gray-500 text-[0.8rem] cursor-pointer">
+                Terms
+              </p>
               <p className="text-gray-500 text-[0.8rem] cursor-pointer">
                 Teams
               </p>
             </div>
+
+            <div className="py-2 text-gray-500 text-[0.8rem] cursor-pointer w-full flex flex-col md:hidden items-center">
+              <p>BlogVibe @ 2025</p>
+            </div>
+            
           </div>
         </div>
       </div>
