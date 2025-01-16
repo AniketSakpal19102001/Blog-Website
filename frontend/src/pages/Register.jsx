@@ -23,6 +23,21 @@ function Register() {
     }
   };
 
+  if (isLoading)
+    return (
+      <div className="py-6 text-center min-h-screen">
+        <img
+          src="https://res.cloudinary.com/dobhpecq1/image/upload/v1737049316/v1qwgq89jldh2011ipdv.gif"
+          className="mx-auto aspect-square w-14"
+          alt=""
+        />
+        <div className="py-8">
+          Please wait, we're processing your request...
+        </div>
+      </div>
+    );
+
+
   return (
     <>
       <div className="w-full h-screen flex justify-center items-center">
