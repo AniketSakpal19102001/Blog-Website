@@ -24,7 +24,7 @@ function Login() {
       console.log(err);
     }
   };
-  if (true)
+  if (isLoading)
     return (
       <div className="py-6 text-center min-h-screen">
         <img
